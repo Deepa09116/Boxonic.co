@@ -6,6 +6,14 @@
     <title>Boxonic | Premium Industrial Packaging & Sealing Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID-HERE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR-ID-HERE');
+    </script>
+
     <style>
         /* --- 1. CORE DESIGN SYSTEM --- */
         :root {
@@ -61,13 +69,15 @@
         .product-section { padding: 90px 0; text-align: center; }
         .section-title { font-size: 2.8rem; margin-bottom: 15px; color: var(--primary-dark); font-weight: 800; }
         .section-subtitle { color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
+        
+        /* MOVING EFFECT CSS */
         .marquee-wrapper { width: 100%; overflow: hidden; padding: 30px 0; background: var(--light-bg); }
-        .marquee-track { display: flex; width: max-content; animation: scroll-left 40s linear infinite; }
+        .marquee-track { display: flex; width: max-content; animation: scroll-left 45s linear infinite; }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .box-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; padding: 20px 0; }
+        .marquee-track:hover { animation-play-state: paused; } /* Pauses on hover so customer can click */
 
         /* --- 6. PRODUCT CARDS --- */
-        .product-card { background: var(--white); border-radius: 16px; padding: 25px; transition: 0.4s; border: 1px solid #f0f0f0; text-align: left; }
+        .product-card { background: var(--white); border-radius: 16px; padding: 25px; transition: 0.4s; border: 1px solid #f0f0f0; text-align: left; width: 320px; margin: 0 15px; flex-shrink: 0; }
         .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
         .img-frame { width: 100%; height: 200px; border-radius: 12px; background: #fdfdfd; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
         .img-frame img { max-width: 90%; max-height: 90%; object-fit: contain; }
@@ -76,7 +86,7 @@
         .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;}
         .buy-btn { font-size: 14px; color: var(--primary); font-weight: 800; text-decoration: none; }
 
-        /* --- 7. OUR STORY (REPOSITIONED BELOW INVENTORY) --- */
+        /* --- 7. OUR STORY --- */
         .story-section { padding: 100px 0; background: var(--light-bg); border-top: 1px solid #eee; }
         .story-grid { display: flex; align-items: center; gap: 80px; }
         .story-content { flex: 1.2; }
@@ -123,7 +133,7 @@
                 <li><a href="#boxes">Boxes</a></li>
                 <li><a href="#story">Our Story</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:+919480420996" class="nav-cta">Call Specialist</a></li>
+                <li><a href="tel:+919480429963" class="nav-cta">Call Specialist</a></li>
             </ul>
         </div>
     </nav>
@@ -133,7 +143,7 @@
             <div class="hero-content">
                 <span class="tagline">Industrial Packaging Leader</span>
                 <h1>Superior <span class="blue-text">Protection</span> for Global Logistics</h1>
-                <p>Bulk supplier of 100+ corrugated box variants and high-performance industrial tapes designed for the modern supply chain.</p>
+                <p>Bulk supplier of corrugated box variants and high-performance industrial tapes designed for the modern supply chain.</p>
                 <div class="hero-btns">
                     <a href="#boxes" class="btn-main">View Full Catalog</a>
                     <a href="#contact" class="btn-secondary">Get a Quote</a>
@@ -145,40 +155,23 @@
         </div>
     </header>
 
-    <section class="features">
-        <div class="container">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h4>Durability First</h4>
-                    <p>Engineered for high-stress transport and multi-stacking warehouse conditions.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Factory Direct</h4>
-                    <p>Bulk industrial pricing without middleman markups for smarter logistics.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Eco-Conscious</h4>
-                    <p>100% recyclable corrugated materials supporting sustainable shipping.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="tapes" class="product-section">
         <div class="container">
             <h2 class="section-title">Precision Sealing Tapes</h2>
-            <p class="section-subtitle">Branded and industrial-grade adhesives for every sector.</p>
+            <p class="section-subtitle">Industrial-grade adhesives moving with precision.</p>
         </div>
         <div class="marquee-wrapper">
             <div class="marquee-track" id="tape-scroller"></div>
         </div>
     </section>
 
-    <section id="boxes" class="product-section" style="background: var(--light-bg);">
+    <section id="boxes" class="product-section" style="background: var(--white);">
         <div class="container">
             <h2 class="section-title">Box Inventory</h2>
-            <p class="section-subtitle">Multi-angle views of our high-strength corrugated collection.</p>
-            <div class="box-grid" id="box-grid-container"></div>
+            <p class="section-subtitle">High-strength corrugated collection.</p>
+        </div>
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="box-scroller"></div>
         </div>
     </section>
 
@@ -187,12 +180,10 @@
             <div class="story-content">
                 <span class="tagline">About Us</span>
                 <h2>Redefining the Standards of Packaging</h2>
-                <p>Established in 2026, <strong>Boxonic</strong> is dedicated to redefining packaging. We provide high-end solutions to ensure goods reach their destination safely.</p>
-                <p>Our commitment to quality and innovation has made us a trusted partner for businesses seeking reliable packaging solutions. With over 107 box variants and 18 tape options, we offer unmatched variety.</p>
-                
+                <p>Established in 2026, <strong>Boxonic</strong> is dedicated to providing high-end solutions to ensure goods reach their destination safely.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <strong>107+</strong>
+                        <strong>100+</strong>
                         <span>Box Variants</span>
                     </div>
                     <div class="stat-item">
@@ -203,12 +194,13 @@
             </div>
             <div class="story-image-wrap">
                 <div style="display: flex; align-items: center; gap: 10px;">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  <span style="font-weight: bold; color: #333;">Quality Control Certified</span>
-</div>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="font-weight: bold; color: #333;">Quality Control Certified</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -220,7 +212,7 @@
                     <p style="color:rgba(255,255,255,0.8); margin-bottom: 40px;">Ready to secure your supply chain? Message our specialists for bulk pricing.</p>
                     <div style="margin-bottom: 20px;">
                         <strong>📍 Address</strong><br>
-                        Industrial Area, Bengaluru, India
+                        Sy 86 NV garden Hormavu Bangalore 560043
                     </div>
                     <div style="margin-bottom: 20px;">
                         <strong>📧 Email</strong><br>
@@ -228,9 +220,8 @@
                     </div>
                     <div>
                         <strong>📞 Phone</strong><br>
-                        +91 94804 20996
+                        +91 94804 29963
                     </div>
-                    
                 </div>
                 <div class="contact-form">
                     <form action="#">
@@ -244,11 +235,9 @@
                         </div>
                         <div class="form-group">
                             <label>How can we help?</label>
-                            <textarea rows="4" placeholder="I am interested in Box Variant #35 and Industrial Tapes..."></textarea>
+                            <textarea rows="4" placeholder="I am interested in bulk quantities..."></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
-                        <div id="contact-container">
-                        </div>
                     </form>
                 </div>
             </div>
@@ -263,7 +252,7 @@
                     <p style="opacity: 0.7;">Quality tested. Industry approved.</p>
                 </div>
                 <div>
-                    <a href="https://wa.me/919480420996" class="btn-main" style="background: #25d366;">WhatsApp Catalog</a>
+                    <a href="https://wa.me/919480429963" class="btn-main" style="background: #25d366;">WhatsApp Catalog</a>
                 </div>
             </div>
             <div style="padding-top: 30px; text-align: center; font-size: 14px; opacity: 0.5;">
@@ -272,7 +261,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919480420996" class="wa-float" target="_blank">
+    <a href="https://wa.me/919480429963" class="wa-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 35px;" alt="WhatsApp">
     </a>
 
@@ -289,7 +278,7 @@
         let tapeHTML = '';
         tapeList.forEach(tape => {
             tapeHTML += `
-                <div class="product-card" style="width:300px; margin: 0 15px;">
+                <div class="product-card">
                     <div class="img-frame"><img src="${tape.img}" onerror="this.src='https://via.placeholder.com/200?text=Tape'"></div>
                     <div class="product-info">
                         <h3>${tape.name}</h3>
@@ -302,9 +291,11 @@
         });
         tapeScroller.innerHTML = tapeHTML + tapeHTML; 
 
-        const boxGrid = document.getElementById('box-grid-container');
+        const boxScroller = document.getElementById('box-scroller');
         let boxesHTML = '';
-        const existingBoxes = [35, 36, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 56, 59, 60, 61, 62];
+        
+        // UPDATED LIST: Removed 43, 47, 48, 50, 55, 59
+        const existingBoxes = [35, 36, 37, 38, 39, 42, 44, 45, 46, 49, 51, 52, 56, 60, 61, 62];
 
         existingBoxes.forEach(i => {
             let miniImagesHTML = '';
@@ -321,14 +312,13 @@
                         <p>High-grade corrugated material. Available in bulk quantities.</p>
                         <div class="card-footer">
                             <span style="font-size: 11px; color: #aaa;">SWIPE FOR VIEWS</span>
-                            <a href="https://wa.me/919480420996" class="buy-btn">WHATSAPP</a>
+                            <a href="https://wa.me/919480429963" class="buy-btn">WHATSAPP</a>
                         </div>
                     </div>
                 </div>`;
         });
-        boxGrid.innerHTML = boxesHTML;
+        // Added twice for infinite loop effect
+        boxScroller.innerHTML = boxesHTML + boxesHTML;
     </script>
-    
-</script>
 </body>
 </html>
