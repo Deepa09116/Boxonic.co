@@ -304,13 +304,13 @@
 
         const boxGrid = document.getElementById('box-grid-container');
         let boxesHTML = '';
-        const existingBoxes = [35, 36, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 56, 59, 60, 61, 62];
+        const existingBoxes = [35, 36, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 56, 59];
 
         existingBoxes.forEach(i => {
             let miniImagesHTML = '';
             for (let j = 1; j <= 3; j++) {
                 let imgNum = j.toString().padStart(2, '0'); 
-                let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
+                let imagePath = `Box%20no-${i}/Image-${imgNum}.jpeg`;
                 miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}'">`;
             }
             boxesHTML += `
