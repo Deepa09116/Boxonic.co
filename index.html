@@ -299,10 +299,10 @@
 
         existingBoxes.forEach(i => {
             let miniImagesHTML = '';
-            for (let j = 1; j <= 3; j++) {
+            for (let j = 1; j <= 5; j++) {
                 let imgNum = j.toString().padStart(2, '0'); 
                 let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
-                miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}'">`;
+                miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}+Img{j}'">`;
             }
             boxesHTML += `
                 <div class="product-card">
