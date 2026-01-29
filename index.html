@@ -249,7 +249,7 @@
             for (let j = 1; j <= 5; j++) {
                 let imgNum = j.toString().padStart(2, '0'); 
                 // CORRECTION: Back to .jpeg
-                let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
+                let imagePath = `Box%20no-${i}/Image-${imgNum}.jpeg`;
                 miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}+Img+${j}'">`;
             }
             boxesHTML += `
