@@ -76,7 +76,7 @@
         .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;}
         .buy-btn { font-size: 14px; color: var(--primary); font-weight: 800; text-decoration: none; }
 
-        /* --- 7. OUR STORY (REPOSITIONED BELOW INVENTORY) --- */
+        /* --- 7. OUR STORY --- */
         .story-section { padding: 100px 0; background: var(--light-bg); border-top: 1px solid #eee; }
         .story-grid { display: flex; align-items: center; gap: 80px; }
         .story-content { flex: 1.2; }
@@ -98,7 +98,7 @@
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
         .submit-btn { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%; }
 
-        /* --- 9. FLOATING WHATSAPP --- */
+        /* --- 9. FLOATING WHATSAPP & FOOTER FIXES --- */
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; transition: 0.3s; }
 
         @media (max-width: 992px) {
@@ -106,6 +106,10 @@
             .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
             .story-image-wrap { margin-top: 40px; }
+            /* FIXED: Shrinking WhatsApp catalog & float on mobile */
+            .wa-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .wa-float img { width: 28px !important; }
+            .footer .btn-main { padding: 12px 20px; font-size: 14px; }
         }
     </style>
 </head>
@@ -114,7 +118,7 @@
     <nav class="navbar">
         <div class="container nav-flex">
             <a href="#" class="logo">
-                <img src="images.jpg.jpeg" alt="Boxonic Logo">
+                <img src="images/images.jpg.jpeg" alt="Boxonic Logo">
                 <span>BOXONIC</span>
             </a>
             <ul class="nav-links">
@@ -188,8 +192,6 @@
                 <span class="tagline">About Us</span>
                 <h2>Redefining the Standards of Packaging</h2>
                 <p>Established in 2026, <strong>Boxonic</strong> is dedicated to redefining packaging. We provide high-end solutions to ensure goods reach their destination safely.</p>
-                <p>Our commitment to quality and innovation has made us a trusted partner for businesses seeking reliable packaging solutions. With over 107 box variants and 18 tape options, we offer unmatched variety.</p>
-                
                 <div class="stats-grid">
                     <div class="stat-item">
                         <strong>107+</strong>
@@ -203,12 +205,13 @@
             </div>
             <div class="story-image-wrap">
                 <div style="display: flex; align-items: center; gap: 10px;">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  <span style="font-weight: bold; color: #333;">Quality Control Certified</span>
-</div>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="font-weight: bold; color: #333;">Quality Control Certified</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -219,18 +222,14 @@
                     <h2>Get in Touch</h2>
                     <p style="color:rgba(255,255,255,0.8); margin-bottom: 40px;">Ready to secure your supply chain? Message our specialists for bulk pricing.</p>
                     <div style="margin-bottom: 20px;">
-                        <strong>📍 Address</strong><br>
-                        Industrial Area, Bengaluru, India
+                        <strong>📍 Address</strong><br>Industrial Area, Bengaluru, India
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <strong>📧 Email</strong><br>
-                        boxonic6@gmail.com
+                        <strong>📧 Email</strong><br>boxonic6@gmail.com
                     </div>
                     <div>
-                        <strong>📞 Phone</strong><br>
-                        +91 94804 20996
+                        <strong>📞 Phone</strong><br>+91 94804 20996
                     </div>
-                    
                 </div>
                 <div class="contact-form">
                     <form action="#">
@@ -244,11 +243,9 @@
                         </div>
                         <div class="form-group">
                             <label>How can we help?</label>
-                            <textarea rows="4" placeholder="I am interested in Box Variant #35 and Industrial Tapes..."></textarea>
+                            <textarea rows="4" placeholder="I am interested in Box Variant #35..."></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
-                        <div id="contact-container">
-                        </div>
                     </form>
                 </div>
             </div>
@@ -308,10 +305,12 @@
 
         existingBoxes.forEach(i => {
             let miniImagesHTML = '';
-            for (let j = 1; j <= 3; j++) {
+            // FIXED: Showing all 5 images from your folders
+            for (let j = 1; j <= 5; j++) {
                 let imgNum = j.toString().padStart(2, '0'); 
-               let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
-                miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}'">`;
+                // FIXED: Exact folder and image name from your video
+                let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
+                miniImagesHTML += `<img src="${imagePath}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}'">`;
             }
             boxesHTML += `
                 <div class="product-card">
@@ -328,7 +327,5 @@
         });
         boxGrid.innerHTML = boxesHTML;
     </script>
-    
-</script>
 </body>
 </html>
