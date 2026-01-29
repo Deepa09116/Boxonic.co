@@ -6,14 +6,6 @@
     <title>Boxonic | Premium Industrial Packaging & Sealing Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID-HERE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YOUR-ID-HERE');
-    </script>
-
     <style>
         /* --- 1. CORE DESIGN SYSTEM --- */
         :root {
@@ -57,26 +49,17 @@
         .btn-main { background: var(--primary); color: white; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         .btn-secondary { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 16px 35px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
 
-        /* --- 4. WHY BOXONIC (FEATURES) --- */
-        .features { padding: 60px 0; background: #fff; border-bottom: 1px solid #eee; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .feature-item { text-align: left; padding: 20px; background: var(--light-bg); border-radius: 15px; transition: 0.3s; }
-        .feature-item:hover { transform: translateY(-5px); background: #fff; box-shadow: var(--shadow); }
-        .feature-item h4 { color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .feature-item h4::before { content: '✓'; color: var(--primary); font-weight: 900; background: #eef4ff; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 12px; }
-
-        /* --- 5. PRODUCTS & SCROLLER --- */
+        /* --- 4. PRODUCTS & SCROLLER --- */
         .product-section { padding: 90px 0; text-align: center; }
         .section-title { font-size: 2.8rem; margin-bottom: 15px; color: var(--primary-dark); font-weight: 800; }
         .section-subtitle { color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
         
-        /* MOVING EFFECT CSS */
         .marquee-wrapper { width: 100%; overflow: hidden; padding: 30px 0; background: var(--light-bg); }
         .marquee-track { display: flex; width: max-content; animation: scroll-left 45s linear infinite; }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-track:hover { animation-play-state: paused; } /* Pauses on hover so customer can click */
+        .marquee-track:hover { animation-play-state: paused; }
 
-        /* --- 6. PRODUCT CARDS --- */
+        /* --- 5. PRODUCT CARDS --- */
         .product-card { background: var(--white); border-radius: 16px; padding: 25px; transition: 0.4s; border: 1px solid #f0f0f0; text-align: left; width: 320px; margin: 0 15px; flex-shrink: 0; }
         .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
         .img-frame { width: 100%; height: 200px; border-radius: 12px; background: #fdfdfd; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
@@ -86,11 +69,11 @@
         .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;}
         .buy-btn { font-size: 14px; color: var(--primary); font-weight: 800; text-decoration: none; }
 
-        /* --- 7. OUR STORY --- */
+        /* --- 6. ABOUT US --- */
         .story-section { padding: 100px 0; background: var(--light-bg); border-top: 1px solid #eee; }
         .story-grid { display: flex; align-items: center; gap: 80px; }
         .story-content { flex: 1.2; }
-        .story-image-wrap { flex: 1; text-align: right; }
+        .story-image-wrap { flex: 1; }
         .story-image-wrap img { width: 100%; border-radius: 24px; box-shadow: var(--shadow); border: 8px solid white; }
         .story-content h2 { font-size: 3rem; color: var(--primary-dark); margin-bottom: 25px; font-weight: 800; line-height: 1.2; }
         .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
@@ -98,7 +81,7 @@
         .stat-item strong { font-size: 32px; color: var(--primary); display: block; }
         .stat-item span { font-size: 14px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
 
-        /* --- 8. CONTACT FORM --- */
+        /* --- 7. CONTACT --- */
         .contact-section { padding: 100px 0; background: var(--white); }
         .contact-box { background: var(--white); border-radius: 24px; overflow: hidden; display: flex; box-shadow: var(--shadow); border: 1px solid #eee; }
         .contact-info { background: var(--primary); color: white; padding: 60px; flex: 1; }
@@ -108,14 +91,15 @@
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
         .submit-btn { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%; }
 
-        /* --- 9. FLOATING WHATSAPP --- */
+        /* --- 8. FLOATING WHATSAPP --- */
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; transition: 0.3s; }
 
         @media (max-width: 992px) {
-            .hero-flex, .story-grid, .contact-box, .feature-grid { flex-direction: column; display: block; }
+            .hero-flex, .story-grid, .contact-box { flex-direction: column; text-align: center; }
             .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
-            .story-image-wrap { margin-top: 40px; }
+            .hero-image { order: -1; margin-bottom: 30px; }
+            .story-image-wrap { order: -1; margin-bottom: 30px; }
         }
     </style>
 </head>
@@ -131,7 +115,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#tapes">Tapes</a></li>
                 <li><a href="#boxes">Boxes</a></li>
-                <li><a href="#story">Our Story</a></li>
+                <li><a href="#story">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="tel:+919480429963" class="nav-cta">Call Specialist</a></li>
             </ul>
@@ -165,7 +149,7 @@
         </div>
     </section>
 
-    <section id="boxes" class="product-section" style="background: var(--white);">
+    <section id="boxes" class="product-section">
         <div class="container">
             <h2 class="section-title">Box Inventory</h2>
             <p class="section-subtitle">High-strength corrugated collection.</p>
@@ -178,28 +162,24 @@
     <section id="story" class="story-section">
         <div class="container story-grid">
             <div class="story-content">
-                <span class="tagline">About Us</span>
-                <h2>Redefining the Standards of Packaging</h2>
-                <p>Established in 2026, <strong>Boxonic</strong> is dedicated to providing high-end solutions to ensure goods reach their destination safely.</p>
+                <span class="tagline">Our Legacy</span>
+                <h2>About Us</h2>
+                <p>Since 2010, <strong>Boxonic</strong> has been working alongside e-commerce vendors and exporters, helping them navigate growth with dependable business solutions. Our journey is defined by continuous learning, strong client relationships, and a commitment to operational excellence.</p>
+                <p>Today, Boxonic continues to support businesses across the e-commerce and export ecosystem with solutions designed for scale and efficiency.</p>
+                
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <strong>100+</strong>
-                        <span>Box Variants</span>
+                        <strong>14+</strong>
+                        <span>Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <strong>18+</strong>
-                        <span>Tape Options</span>
+                        <strong>500+</strong>
+                        <span>Clients Served</span>
                     </div>
                 </div>
             </div>
             <div class="story-image-wrap">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 12l2 2 4-4" stroke="#0046ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span style="font-weight: bold; color: #333;">Quality Control Certified</span>
-                </div>
+                <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=800&q=80">
             </div>
         </div>
     </section>
@@ -209,14 +189,10 @@
             <div class="contact-box">
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
-                    <p style="color:rgba(255,255,255,0.8); margin-bottom: 40px;">Ready to secure your supply chain? Message our specialists for bulk pricing.</p>
+                    <p style="opacity:0.8; margin-bottom: 40px;">Message our specialists for bulk pricing.</p>
                     <div style="margin-bottom: 20px;">
                         <strong>📍 Address</strong><br>
                         Sy 86 NV garden Hormavu Bangalore 560043
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <strong>📧 Email</strong><br>
-                        boxonic6@gmail.com
                     </div>
                     <div>
                         <strong>📞 Phone</strong><br>
@@ -225,18 +201,8 @@
                 </div>
                 <div class="contact-form">
                     <form action="#">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Business Email</label>
-                            <input type="email" placeholder="john@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>How can we help?</label>
-                            <textarea rows="4" placeholder="I am interested in bulk quantities..."></textarea>
-                        </div>
+                        <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your Name" required></div>
+                        <div class="form-group"><label>Email</label><input type="email" placeholder="Email Address" required></div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
@@ -244,34 +210,17 @@
         </div>
     </section>
 
-    <footer class="footer" style="background: var(--primary-dark); color: #fff; padding: 60px 0 30px;">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
-                <div>
-                    <h3 style="font-size: 28px;">BOXONIC</h3>
-                    <p style="opacity: 0.7;">Quality tested. Industry approved.</p>
-                </div>
-                <div>
-                    <a href="https://wa.me/919480429963" class="btn-main" style="background: #25d366;">WhatsApp Catalog</a>
-                </div>
-            </div>
-            <div style="padding-top: 30px; text-align: center; font-size: 14px; opacity: 0.5;">
-                &copy; 2026 Boxonic Industrial Packaging. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
     <a href="https://wa.me/919480429963" class="wa-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 35px;" alt="WhatsApp">
     </a>
 
     <script>
         const tapeList = [
-            { name: "Amazon Grade Tape", img: "amazontape.jpeg", desc: "Tamper-evident branded tape with high-tack adhesive." },
-            { name: "Flipkart Grade Tape", img: "flipkarttape.jpeg", desc: "Extra-strong e-commerce grade for heavy transit." },
-            { name: "Myntra Grade Tape", img: "Myntratape.jpeg", desc: "Premium quality ensuring secure parcel arrivals." },
-            { name: "Nykaa Grade Tape", img: "Nykaatape.jpeg", desc: "Reliable strength for cosmetic and boutique shipping." },
-            { name: "Professional White", img: "White-tape.jpeg", desc: "Clean finish high-grip tape for warehouse sealing." }
+            { name: "Amazon Grade Tape", img: "amazontape.jpeg", desc: "Tamper-evident branded tape." },
+            { name: "Flipkart Grade Tape", img: "flipkarttape.jpeg", desc: "Extra-strong e-commerce grade." },
+            { name: "Myntra Grade Tape", img: "Myntratape.jpeg", desc: "Premium quality ensuring security." },
+            { name: "Nykaa Grade Tape", img: "Nykaatape.jpeg", desc: "Reliable strength for cosmetics." },
+            { name: "Professional White", img: "White-tape.jpeg", desc: "Clean finish high-grip tape." }
         ];
 
         const tapeScroller = document.getElementById('tape-scroller');
@@ -283,9 +232,7 @@
                     <div class="product-info">
                         <h3>${tape.name}</h3>
                         <p>${tape.desc}</p>
-                        <div class="card-footer">
-                            <a href="#contact" class="buy-btn">GET QUOTE →</a>
-                        </div>
+                        <div class="card-footer"><a href="#contact" class="buy-btn">GET QUOTE →</a></div>
                     </div>
                 </div>`;
         });
@@ -294,22 +241,23 @@
         const boxScroller = document.getElementById('box-scroller');
         let boxesHTML = '';
         
-        // UPDATED LIST: Removed 43, 47, 48, 50, 55, 59
+        // CORRECTION: Removed 43, 47, 48, 50, 55, 59, 60, 61, 62
         const existingBoxes = [35, 36, 37, 38, 39, 42, 44, 45, 46, 49, 51, 52, 56];
 
         existingBoxes.forEach(i => {
             let miniImagesHTML = '';
             for (let j = 1; j <= 5; j++) {
                 let imgNum = j.toString().padStart(2, '0'); 
+                // CORRECTION: Back to .jpeg
                 let imagePath = `boxes/boxes%20images/Box%20no-${i}/Image-${imgNum}.jpeg`;
-                miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}+Img{j}'">`;
+                miniImagesHTML += `<img src="${imagePath}" onerror="this.src='https://via.placeholder.com/300x200?text=Box+${i}+Img+${j}'">`;
             }
             boxesHTML += `
                 <div class="product-card">
                     <div class="mini-gallery">${miniImagesHTML}</div>
                     <div class="product-info">
                         <h3>Box Variant #${i}</h3>
-                        <p>High-grade corrugated material. Available in bulk quantities.</p>
+                        <p>High-grade corrugated material.</p>
                         <div class="card-footer">
                             <span style="font-size: 11px; color: #aaa;">SWIPE FOR VIEWS</span>
                             <a href="https://wa.me/919480429963" class="buy-btn">WHATSAPP</a>
@@ -317,7 +265,6 @@
                     </div>
                 </div>`;
         });
-        // Added twice for infinite loop effect
         boxScroller.innerHTML = boxesHTML + boxesHTML;
     </script>
 </body>
